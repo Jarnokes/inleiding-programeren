@@ -19,14 +19,23 @@ let dartLevel = document.querySelector(".dart-level")
 let dartVersterken = document.querySelector(".dart-versterken")
 let parsedDartVersterken = parseFloat(dartVersterken.innerHTML)
 
+let superaapKosten = document.querySelector('#superaap-kosten')
+let parsedsuperaapKosten = parseFloat(superaapKosten.innerHTML)
+let superaapLevel = document.querySelector(".superaap-level")
+let superaapVersterken = document.querySelector(".superaap-versterken")
+let parsedSuperaapVersterken = parseFloat(superaapVersterken.innerHTML)
+
 let ppcTekst = document.getElementById("ppc-tekst")
 let ppsTekst = document.getElementById("pps-tekst")
 
 let popSound = document.getElementById("pop-sound");
+let upgradeSound = document.getElementById("upgrade-sound");
 
 let ppc = 1
 
 let pps = 0
+
+const music = document.getElementById('background-music');
 
 // Deze lijn code zorgt ervoor als ik op de ballon klik het aantal pops omhoog de parsefloat zorgt ervoor dat de +1 niet achter de 0 komt te staan maar het echt bij elkaar optelt
 function incrementBallon() {
@@ -47,6 +56,9 @@ function koopKlik() {
 
         parsedklikkerKosten *= 1.5
         klikkerKosten.innerHTML = Math.round(parsedklikkerKosten)
+
+        upgradeSound.currentTime = 0;
+        upgradeSound.play();
     }
 
 }
@@ -62,6 +74,10 @@ function koopBenjamin() {
 
         parsedBenjaminKosten *= 1.5
         benjaminKosten.innerHTML = Math.round(parsedBenjaminKosten)
+
+        upgradeSound.currentTime = 0;
+        upgradeSound.play();
+
     }
 
 }
@@ -77,8 +93,31 @@ function koopDart() {
 
         parsedDartKosten *= 1.5
         dartKosten.innerHTML = Math.round(parsedDartKosten)
+
+        upgradeSound.currentTime = 0;
+        upgradeSound.play();
+
     }
 
+}
+
+function koopSuperaap() {
+    if (parsedballon >= parsedsuperaapKosten) {
+        ballon.innerHTML = Math.round(parsedballon -= parsedsuperaapKosten);
+
+        superaapLevel.innerHTML++;
+        parsedSuperaapVersterken = parseFloat((parsedSuperaapVersterken * 1.5).toFixed(2));
+        superaapVersterken.innerHTML = parsedSuperaapVersterken; // Deze lijn is belangrijk om de versterkingswaarde te updaten in de UI.
+
+        pps += parsedSuperaapVersterken;
+
+        parsedsuperaapKosten *= 1.5;
+        superaapKosten.innerHTML = Math.round(parsedsuperaapKosten);
+
+        upgradeSound.currentTime = 0;
+        upgradeSound.play();
+
+    }
 }
 
 setInterval(() => {
@@ -87,3 +126,15 @@ setInterval(() => {
     ppcTekst.innerHTML = Math.round(ppc)
     ppsTekst.innerHTML = Math.round(pps)
 }, 100)
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+
+function setVolume(value) {
+    music.volume = value;
+}

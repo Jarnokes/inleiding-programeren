@@ -13,7 +13,7 @@
     <main>
         <section class="algemeen">
             <section class="links">
-                <h3>Pops: <span class="ballon-koste">550</span></h3>
+                <h3>Pops: <span class="ballon-koste">0</span></h3>
                 <img src="./images/redbloon.png" alt="ballon" class="ballon-foto" onclick="incrementBallon()" draggable="false">
             </section>
             <section class="rechts">
@@ -75,6 +75,25 @@
                     </section>
                 </section>
 
+                <section class="upgrade" onclick="koopSuperaap()">
+                    <section class="linker-sectie">
+                        <img src="./images/superaap.png" alt="Superaap" class="upgrade-foto">
+                    </section>
+                    <section class="middel-sectie">
+                        <h4>Superaap</h4>
+                        <section class="kosten-info">
+                            <p>kosten: <span id="superaap-kosten">5500</span></p>
+                            <img src="./images/PopIcon.png" alt="" class="ballon-kosten-foto">
+                        </section>
+                    </section>
+                    <section class="rechter-sectie">
+                        level <span class="superaap-level">0</span>
+                    </section>
+                    <section class="level-info">
+                        <p>+<span class="superaap-versterken">200</span> Pops <br> per seconde</p>
+                    </section>
+                </section>
+
             </section>
         </section>
 
@@ -82,11 +101,20 @@
             <section class="tekst">
                 <p>PPC: <span id="ppc-tekst">1</span></p>
                 <p>PPS: <span id="pps-tekst">0</span></p>
+                <button onclick="toggleMusic()">Pauze / Play</button>
+                <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="setVolume(this.value)">
             </section>
         </section>
 
+
+
     </main>
+    <audio id="background-music" autoplay loop>
+        <source src="./sounds/massobeats - rose water (royalty free lofi music).mp3" type="audio/mp3">
+        https://www.youtube.com/watch?v=xakBzg5atsM
+    </audio>
     <audio id="pop-sound" src="./sounds/pop.mp3"></audio>
+    <audio id="upgrade-sound" src="./sounds/aankoop.mp3"></audio>
     <script src="./js/index.js"></script>
 </body>
 
