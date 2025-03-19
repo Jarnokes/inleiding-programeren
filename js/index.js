@@ -22,12 +22,16 @@ let parsedDartVersterken = parseFloat(dartVersterken.innerHTML)
 let ppcTekst = document.getElementById("ppc-tekst")
 let ppsTekst = document.getElementById("pps-tekst")
 
+let popSound = document.getElementById("pop-sound");
+
 let ppc = 1
 
 let pps = 0
 
 // Deze lijn code zorgt ervoor als ik op de ballon klik het aantal pops omhoog de parsefloat zorgt ervoor dat de +1 niet achter de 0 komt te staan maar het echt bij elkaar optelt
 function incrementBallon() {
+    popSound.currentTime = 1; // Reset geluid zodat het snel achter elkaar kan spelen
+    popSound.play(); // Speelt het popgeluid af
     ballon.innerHTML = Math.round(parsedballon += ppc)
 }
 
