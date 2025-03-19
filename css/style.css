@@ -7,7 +7,7 @@ body {
     background-color: #3e3e3e;
     color: white;
     user-select: none;
-    cursor: url('/images/cursor.cur'), auto;
+    cursor: url('./images/cursor.cur'), auto;
     position: relative;
 }
 
@@ -97,8 +97,8 @@ body {
 .stats {
     position: absolute;
     bottom: 0;
-    width: 80vw;
-    padding: 30px;
+    width: 90vw;
+    padding: 20px;
     border: 2px white solid;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
