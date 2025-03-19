@@ -1,0 +1,115 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #3e3e3e;
+    color: white;
+    user-select: none;
+    cursor: url('/images/cursor.cur'), auto;
+    position: relative;
+}
+
+.algemeen {
+    display: flex;
+    gap: 200px
+}
+
+.links h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.ballon-foto {
+    width: 250px;
+}
+
+.ballon-foto:hover {
+    opacity: 0.9;
+    transition: ease-in-out 100ms;
+}
+
+.ballon-foto:active {
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+.upgrade-foto {
+    width: 55px;
+    height: 55px;
+}
+
+.ballon-kosten-foto {
+    width: 20px;
+    height: 20px;
+}
+
+.middel-sectie h4 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.middel-sectie p {
+    margin: 0;
+}
+
+.upgrade {
+    display: flex;
+    align-items: center;
+    width: 330px;
+    height: 60px;
+    border: 4px solid white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.rechts :hover {
+    opacity: 90%;
+}
+
+.kosten-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.level-info {
+    position: absolute;
+    right: -100px;
+    background-color: grey;
+    height: 80px;
+    width: 100px;
+    text-align: center;
+    display: none;
+}
+
+.upgrade:hover .level-info {
+    display: block;
+    z-index: -1;
+}
+
+.stats {
+    position: absolute;
+    bottom: 0;
+    width: 450px;
+    padding: 30px;
+    border: 2px white solid;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.tekst {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker game</title>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="algemeen">
+            <section class="links">
+                <h3>Pops: <span class="ballon-koste">550</span></h3>
+                <img src="./images/redbloon.png" alt="ballon" class="ballon-foto" onclick="incrementBallon()" draggable="false">
+            </section>
+            <section class="rechts">
+
+                <section class="upgrade" onclick="koopKlik()">
+                    <section class="linker-sectie">
+                        <img src="./images/cursor.png" alt="Klikker" class="upgrade-foto">
+                    </section>
+                    <section class="middel-sectie">
+                        <h4>Klikker</h4>
+                        <section class="kosten-info">
+                            <p>kosten: <span id="klikker-kosten">10</span></p>
+                            <img src="./images/PopIcon.png" alt="" class="ballon-kosten-foto">
+                        </section>
+                    </section>
+                    <section class="rechter-sectie">
+                        level <span class="klikker-level">0</span>
+                    </section>
+                    <section class="level-info">
+                        <p>+<span class="klikker-versterken">1</span> Pops <br> Per klik</p>
+                    </section>
+                </section>
+
+                <section class="upgrade" onclick="koopBenjamin()">
+                    <section class="linker-sectie">
+                        <img src="./images/benjamin.png" alt="Benjamin" class="upgrade-foto">
+                    </section>
+                    <section class="middel-sectie">
+                        <h4>Benjamin</h4>
+                        <section class="kosten-info">
+                            <p>kosten: <span id="benjamin-kosten">150</span></p>
+                            <img src="./images/PopIcon.png" alt="" class="ballon-kosten-foto">
+                        </section>
+                    </section>
+                    <section class="rechter-sectie">
+                        level <span class="benjamin-level">0</span>
+                    </section>
+                    <section class="level-info">
+                        <p>+<span class="benjamin-versterken">4</span> Pops <br> per seconde</p>
+                    </section>
+                </section>
+
+                <section class="upgrade" onclick="koopDart()">
+                    <section class="linker-sectie">
+                        <img src="./images/dart.png" alt="Dart" class="upgrade-foto">
+                    </section>
+                    <section class="middel-sectie">
+                        <h4>Dart</h4>
+                        <section class="kosten-info">
+                            <p>kosten: <span id="dart-kosten">550</span></p>
+                            <img src="./images/PopIcon.png" alt="" class="ballon-kosten-foto">
+                        </section>
+                    </section>
+                    <section class="rechter-sectie">
+                        level <span class="dart-level">0</span>
+                    </section>
+                    <section class="level-info">
+                        <p>+<span class="dart-versterken">8</span> Pops <br> per seconde</p>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+
+        <section class="stats">
+            <section class="tekst">
+                <p>PPC: <span id="ppc-tekst">1</span></p>
+                <p>PPS: <span id="pps-tekst">0</span></p>
+            </section>
+        </section>
+
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
