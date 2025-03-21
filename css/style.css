@@ -7,7 +7,6 @@ body {
     background-color: #3e3e3e;
     color: white;
     user-select: none;
-    cursor: url('./images/cursor.cur'), auto;
     position: relative;
 }
 

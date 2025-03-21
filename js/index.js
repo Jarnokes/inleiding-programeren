@@ -37,14 +37,18 @@ let pps = 0
 
 const music = document.getElementById('background-music');
 
-// Deze lijn code zorgt ervoor als ik op de ballon klik het aantal pops omhoog de parsefloat zorgt ervoor dat de +1 niet achter de 0 komt te staan maar het echt bij elkaar optelt
+// parsefloat leest de tekstuele inhoud uit mijn HTML zoals de score of kosten en interpeteert deze als numerieke waardes
+// parsed is een deel van de variabelen om aan te geven dat deze variabelen waarden bevatten die met parsefloat veranderd worden 
+// innerHTML haalt de inhoud op of wijzigt de inhoud van een HTML element vanuit javascript
+
+// zorgt ervoor dat er een geluidje afspeelt als je op de ballon klikt en dat de score verhoogt wordt
 function incrementBallon() {
-    popSound.currentTime = 1; // Reset geluid zodat het snel achter elkaar kan spelen
-    popSound.play(); // Speelt het popgeluid af
+    popSound.currentTime = 0;
+    popSound.play();
     ballon.innerHTML = Math.round(parsedballon += ppc)
 }
 
-
+// zorgt ervoor dat je upgrades kan kopen copy paste deze voor als je nieuwe upgrades wil toevoegen aan de game
 function koopKlik() {
     if (parsedballon >= parsedklikkerKosten) {
         ballon.innerHTML = Math.round(parsedballon -= parsedklikkerKosten)
@@ -107,7 +111,7 @@ function koopSuperaap() {
 
         superaapLevel.innerHTML++;
         parsedSuperaapVersterken = parseFloat((parsedSuperaapVersterken * 1.5).toFixed(2));
-        superaapVersterken.innerHTML = parsedSuperaapVersterken; // Deze lijn is belangrijk om de versterkingswaarde te updaten in de UI.
+        superaapVersterken.innerHTML = parsedSuperaapVersterken;
 
         pps += parsedSuperaapVersterken;
 
@@ -120,6 +124,8 @@ function koopSuperaap() {
     }
 }
 
+
+// dit is een interval die elke 100ms afgaat en er voor zorgt dat de score soepel omhoog gaat en de ppc en pps correct getond wordt in de stats container onder in
 setInterval(() => {
     parsedballon += pps / 10
     ballon.innerHTML = Math.round(parsedballon)
